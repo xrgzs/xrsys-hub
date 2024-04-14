@@ -235,7 +235,7 @@ class _SecurityPageState extends State<SecurityPage> {
             width: 150,
             child: Button(
               onPressed: () async {
-                showLoadingDialog(context, "Updating Certificates");
+                showLoadingDialog(context, "正在更新证书");
                 await _securityService.updateCertificates();
 
                 if (!context.mounted) return;
@@ -253,6 +253,36 @@ class _SecurityPageState extends State<SecurityPage> {
                 );
               },
               child: Text(context.l10n.updateButton),
+            ),
+          ),
+        ),
+
+        CardHighlight(
+          icon: msicons.FluentIcons.clock_arrow_download_20_regular,
+          label: "校准时间",
+          description: "通过NTP服务器联网校准系统时间，避免证书错误",
+          child: SizedBox(
+            width: 150,
+            child: Button(
+              onPressed: () async {
+                showLoadingDialog(context, "正在校准时间");
+                await _securityService.updateCertificates();
+
+                if (!context.mounted) return;
+                context.pop();
+                showDialog(
+                  context: context,
+                  builder: (context) => ContentDialog(
+                    content: Text('校准时间成功'),
+                    actions: [
+                      Button(
+                          child: Text(context.l10n.okButton),
+                          onPressed: () => context.pop()),
+                    ],
+                  ),
+                );
+              },
+              child: Text('执行'),
             ),
           ),
         ),
