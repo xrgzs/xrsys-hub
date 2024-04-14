@@ -11,54 +11,54 @@ import 'package:win32_registry/win32_registry.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart' as msicons;
 
 const languageList = [
-  ComboBoxItem(
-    value: 'en_US',
-    child: Text('English'),
-  ),
-  ComboBoxItem(
-    value: 'pt_BR',
-    child: Text('Portuguese (Brazil)'),
-  ),
+  // ComboBoxItem(
+  //   value: 'en_US',
+  //   child: Text('English'),
+  // ),
+  // ComboBoxItem(
+  //   value: 'pt_BR',
+  //   child: Text('Portuguese (Brazil)'),
+  // ),
   ComboBoxItem(
     value: 'zh_CN',
     child: Text('Chinese (Simplified)'),
   ),
-  ComboBoxItem(
-    value: 'zh_TW',
-    child: Text('Chinese (Traditional)'),
-  ),
-  ComboBoxItem(
-    value: 'de_DE',
-    child: Text('German'),
-  ),
-  ComboBoxItem(
-    value: 'fr_FR',
-    child: Text('French'),
-  ),
-  ComboBoxItem(
-    value: 'ru_RU',
-    child: Text('Russian'),
-  ),
-  ComboBoxItem(
-    value: 'uk_UA',
-    child: Text('Ukrainian'),
-  ),
-  ComboBoxItem(
-    value: 'hu_HU',
-    child: Text('Hungarian'),
-  ),
-  ComboBoxItem(
-    value: 'tr_TR',
-    child: Text('Turkish'),
-  ),
-  ComboBoxItem(
-    value: 'ar_SA',
-    child: Text('Arabic'),
-  ),
-  ComboBoxItem(
-    value: 'it_IT',
-    child: Text('Italian'),
-  ),
+  // ComboBoxItem(
+  //   value: 'zh_TW',
+  //   child: Text('Chinese (Traditional)'),
+  // ),
+  // ComboBoxItem(
+  //   value: 'de_DE',
+  //   child: Text('German'),
+  // ),
+  // ComboBoxItem(
+  //   value: 'fr_FR',
+  //   child: Text('French'),
+  // ),
+  // ComboBoxItem(
+  //   value: 'ru_RU',
+  //   child: Text('Russian'),
+  // ),
+  // ComboBoxItem(
+  //   value: 'uk_UA',
+  //   child: Text('Ukrainian'),
+  // ),
+  // ComboBoxItem(
+  //   value: 'hu_HU',
+  //   child: Text('Hungarian'),
+  // ),
+  // ComboBoxItem(
+  //   value: 'tr_TR',
+  //   child: Text('Turkish'),
+  // ),
+  // ComboBoxItem(
+  //   value: 'ar_SA',
+  //   child: Text('Arabic'),
+  // ),
+  // ComboBoxItem(
+  //   value: 'it_IT',
+  //   child: Text('Italian'),
+  // ),
 ];
 
 class SettingsPage extends StatefulWidget {

@@ -248,23 +248,23 @@ class _Home extends StatelessWidget {
     CardButtonWidget(
       icon: FluentIcons.git_graph,
       title: "GitHub",
-      subtitle: "Source Code",
+      subtitle: "查看源代码",
       onPressed: () async => await run(
           "rundll32 url.dll,FileProtocolHandler https://github.com/xrgzs"),
     ),
     CardButtonWidget(
       icon: msicons.FluentIcons.drink_coffee_20_regular,
-      title: "Donation",
-      subtitle: "Support the project",
+      title: "文档",
+      subtitle: "阅读详细说明",
       onPressed: () async => await run(
-          "rundll32 url.dll,FileProtocolHandler https://github.com/xrgzs"),
+          "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top/"),
     ),
     CardButtonWidget(
-      icon: msicons.FluentIcons.chat_help_20_regular,
-      title: "Discord",
-      subtitle: "Join our server",
+      icon: msicons.FluentIcons.document_multiple_20_regular,
+      title: "联系",
+      subtitle: "与我们保持联系",
       onPressed: () async => await run(
-          "rundll32 url.dll,FileProtocolHandler https://github.com/xrgzs"),
+          "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top/overview/contact.html"),
     ),
   ];
 
