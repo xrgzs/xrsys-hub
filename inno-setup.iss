@@ -5,7 +5,7 @@
 #define MyAppVersion "1.0.0"
 #define MyAppPublisher "Xiaoran System"
 #define MyAppURL "https://sys.xrgzs.top/"
-#define MyAppExeName "xrsystool.exe"
+#define MyAppExeName "revitool.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
