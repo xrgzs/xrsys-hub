@@ -246,25 +246,25 @@ class _Home extends StatelessWidget {
 
   static final _homeCardButtons = [
     CardButtonWidget(
-      icon: FluentIcons.git_graph,
-      title: "GitHub",
-      subtitle: "查看源代码",
-      onPressed: () async => await run(
-          "rundll32 url.dll,FileProtocolHandler https://github.com/xrgzs"),
-    ),
-    CardButtonWidget(
-      icon: msicons.FluentIcons.drink_coffee_20_regular,
+      icon: msicons.FluentIcons.document_multiple_20_regular,
       title: "文档",
       subtitle: "阅读详细说明",
       onPressed: () async => await run(
           "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top/"),
     ),
     CardButtonWidget(
-      icon: msicons.FluentIcons.document_multiple_20_regular,
+      icon: msicons.FluentIcons.contact_card_20_regular,
       title: "联系",
       subtitle: "与我们保持联系",
       onPressed: () async => await run(
           "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top/overview/contact.html"),
+    ),
+    CardButtonWidget(
+      icon: FluentIcons.git_graph,
+      title: "GitHub",
+      subtitle: "查看源代码",
+      onPressed: () async => await run(
+          "rundll32 url.dll,FileProtocolHandler https://github.com/xrgzs"),
     ),
   ];
 
@@ -312,11 +312,11 @@ class _Home extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(context.l10n.homeWelcome,
+                  Text("欢迎使用",
                       style: const TextStyle(
                           fontSize: 16, color: Color(0xB7FFFFFF))),
                   const Text(
-                    "潇然系统设置",
+                    "潇然系统",
                     style: TextStyle(
                       fontSize: 28,
                       color: Color(0xFFffffff),
@@ -324,7 +324,7 @@ class _Home extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 8.0),
-                    child: Text(context.l10n.homeDescription,
+                    child: Text("帮助您更方便地使用和维护电脑",
                         style: const TextStyle(
                             fontSize: 16, color: Color(0xB7FFFFFF))
                         //     : const TextStyle(
@@ -337,9 +337,9 @@ class _Home extends StatelessWidget {
                     child: SizedBox(
                       width: 175,
                       child: Button(
-                        child: Text(context.l10n.homeReviLink),
+                        child: Text('访问官网'),
                         onPressed: () async => await run(
-                            "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top"),
+                            "rundll32 url.dll,FileProtocolHandler https://www.xrgzs.top"),
                       ),
                     ),
                   ),
@@ -348,9 +348,9 @@ class _Home extends StatelessWidget {
                     child: SizedBox(
                       width: 175,
                       child: FilledButton(
-                        child: Text(context.l10n.homeReviFAQLink),
+                        child: Text('阅读文档'),
                         onPressed: () async => await run(
-                            "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top/faq"),
+                            "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top/"),
                       ),
                     ),
                   ),

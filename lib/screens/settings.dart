@@ -197,6 +197,11 @@ class _SettingsPageState extends State<SettingsPage> {
             items: languageList,
           ),
         ),
+        CardHighlight(
+          icon: msicons.FluentIcons.info_20_regular,
+          label: "关于 潇然系统设置",
+          description: "此程序修改自 meetrevision/revision-tool，在此向原项目表示感谢！",
+        ),
       ],
     );
   }
