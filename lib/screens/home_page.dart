@@ -282,6 +282,10 @@ class _Home extends StatelessWidget {
                   maxHeight: MediaQuery.of(context).size.height * 0.72),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  image: AssetImage('additionals/wallpaper.jpg'),
+                  fit: BoxFit.cover,
+                ),
                 gradient: context.theme.brightness.isDark
                     ? const LinearGradient(
                         colors: [
@@ -299,10 +303,6 @@ class _Home extends StatelessWidget {
                         ],
                         stops: [0.0, 0.6, 1.0],
                       ),
-                image: DecorationImage(
-                  image: AssetImage('additionals/wallpaper.jpg'),
-                  fit: BoxFit.cover,
-                ),
               ),
               padding: const EdgeInsets.only(left: 50, top: 150),
               child: Column(
