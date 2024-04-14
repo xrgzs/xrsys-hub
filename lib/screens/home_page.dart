@@ -289,6 +289,7 @@ class _Home extends StatelessWidget {
                     Colors.black.withOpacity(0.5), // 根据需要调整不透明度
                     BlendMode.dstATop, // 这个混合模式允许渐变显示在图片上方
                   ),
+                ),
                 gradient: context.theme.brightness.isDark
                     ? const LinearGradient(
                         colors: [
