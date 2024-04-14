@@ -114,11 +114,11 @@ class MSStoreService {
   }
 
   Future<List<ProductsList>> searchProducts(String query, String ring) async {
-    //"$_filteredSearchAPI?&Query=$query&FilteredCategories=AllProducts&hl=zh-cn${systemLanguage.toLowerCase()}&
+    //"$_filteredSearchAPI?&Query=$query&FilteredCategories=AllProducts&hl=en-us${systemLanguage.toLowerCase()}&
     final response = await _dio.get(
-        "$_searchAPI?gl=US&hl=zh-cn&query=$query&mediaType=all&age=all&price=all&category=all&subscription=all",
+        "$_searchAPI?gl=US&hl=en-us&query=$query&mediaType=all&age=all&price=all&category=all&subscription=all",
 
-// https://apps.microsoft.com/api/products/search?gl=GE&hl=zh-cn&query=xbox&cursor=
+// https://apps.microsoft.com/api/products/search?gl=GE&hl=en-us&query=xbox&cursor=
         options: _options);
 
     if (response.statusCode == 200) {
@@ -152,9 +152,9 @@ class MSStoreService {
         //TODO: Implement proper way to get compatible language codes for the store API parameters
         
         // When Windows region is set to English (World), the language code isn't compatible with the store API
-        //"$_storeAPI/products/$id?market=US&locale=zh-cn&deviceFamily=Windows.Desktop",
+        //"$_storeAPI/products/$id?market=US&locale=en-us&deviceFamily=Windows.Desktop",
         final response = await _dio.get(
-        "$_storeAPI/products/$id?market=US&locale=zh-cn&deviceFamily=Windows.Desktop",
+        "$_storeAPI/products/$id?market=US&locale=en-us&deviceFamily=Windows.Desktop",
         cancelToken: _cancelToken);
     final skus = response.data["Payload"]["Skus"];
     if (response.statusCode == 200) {
