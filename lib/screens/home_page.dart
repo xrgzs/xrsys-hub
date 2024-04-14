@@ -250,21 +250,21 @@ class _Home extends StatelessWidget {
       title: "GitHub",
       subtitle: "Source Code",
       onPressed: () async => await run(
-          "rundll32 url.dll,FileProtocolHandler https://github.com/meetrevision"),
+          "rundll32 url.dll,FileProtocolHandler https://github.com/xrgzs"),
     ),
     CardButtonWidget(
       icon: msicons.FluentIcons.drink_coffee_20_regular,
       title: "Donation",
       subtitle: "Support the project",
       onPressed: () async => await run(
-          "rundll32 url.dll,FileProtocolHandler https://www.buymeacoffee.com/meetrevision"),
+          "rundll32 url.dll,FileProtocolHandler https://github.com/xrgzs"),
     ),
     CardButtonWidget(
       icon: msicons.FluentIcons.chat_help_20_regular,
       title: "Discord",
       subtitle: "Join our server",
       onPressed: () async => await run(
-          "rundll32 url.dll,FileProtocolHandler https://www.revi.cc/docs/faq"),
+          "rundll32 url.dll,FileProtocolHandler https://github.com/xrgzs"),
     ),
   ];
 
@@ -331,7 +331,7 @@ class _Home extends StatelessWidget {
                       child: Button(
                         child: Text(context.l10n.homeReviLink),
                         onPressed: () async => await run(
-                            "rundll32 url.dll,FileProtocolHandler https://www.revi.cc"),
+                            "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top"),
                       ),
                     ),
                   ),
@@ -342,7 +342,7 @@ class _Home extends StatelessWidget {
                       child: FilledButton(
                         child: Text(context.l10n.homeReviFAQLink),
                         onPressed: () async => await run(
-                            "rundll32 url.dll,FileProtocolHandler https://www.revi.cc/docs/faq"),
+                            "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top/faq"),
                       ),
                     ),
                   ),
