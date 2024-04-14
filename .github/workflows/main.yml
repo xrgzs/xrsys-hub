@@ -26,7 +26,7 @@ jobs:
 
       - name: Bump MyAppVersion in Inno Setup
         run: |
-          (Get-Content -Path "inno-setup.iss") -replace '#define MyAppVersion "[\d\.]+"', "#define MyAppVersion `"${{ env.NEW_VERSION }}`"" | Set-Content -Path "inno-setup.iss"
+          (Get-Content -Path "inno-setup.iss" -Encoding utf8BOM) -replace '#define MyAppVersion "[\d\.]+"', "#define MyAppVersion `"${{ env.NEW_VERSION }}`"" | Set-Content -Path "inno-setup.iss" -Encoding utf8BOM
         shell: pwsh
       
       - run: flutter gen-l10n
