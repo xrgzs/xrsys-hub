@@ -14,12 +14,12 @@ class RegistryUtilsService {
   static bool get isW11 => _w11;
   static final bool _w11 = buildNumber > 19045;
 
-  static bool get isSupported =>
-      readString(
-          RegistryHive.localMachine,
-          r'SOFTWARE\Microsoft\Windows NT\CurrentVersion',
-          'EditionSubVersion') ==
-      'ReviOS';
+  static bool get isSupported => true;
+      // readString(
+      //     RegistryHive.localMachine,
+      //     r'SOFTWARE\Microsoft\Windows NT\CurrentVersion',
+      //     'EditionSubVersion') ==
+      // 'ReviOS';
 
   // As of 04.03.2024, ReviOS playbook doesn't support removing packages for ARM devices, therefore reverting to the old method.
   // static bool _validate() {
