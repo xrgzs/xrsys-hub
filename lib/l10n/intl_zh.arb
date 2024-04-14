@@ -100,5 +100,9 @@
   "close": "关闭",
   "search": "搜索",
   "perfBALabel": "后台应用程序",
-  "perfBADescription": "允许应用程序在后台运行，即使您没有使用它们。由于不断在后台运行，这将会对性能产生影响。禁用此选项还可能将禁用某些应用程序的通知。"
+  "perfBADescription": "允许应用程序在后台运行，即使您没有使用它们。由于不断在后台运行，这将会对性能产生影响。禁用此选项还可能将禁用某些应用程序的通知。",
+  "msstoreSearchingPackages": "正在搜索软件包",
+  "msstoreWait": "请稍候...",
+  "msstorePackagesPrompt": "您是否要安装以下软件包？",
+  "msstorePackagesNotFound": "未找到任何软件包" 
 }
