@@ -107,6 +107,7 @@ class MyApp extends StatelessWidget {
           themeMode: appTheme.themeMode,
           color: appTheme.color,
           darkTheme: FluentThemeData(
+            fontFamily: "Microsoft Yahei UI",
             brightness: Brightness.dark,
             accentColor: appTheme.color,
             scaffoldBackgroundColor: const Color.fromARGB(255, 32, 32, 32),

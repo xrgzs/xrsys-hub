@@ -71,7 +71,7 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   late ThemeMode theme;
   final _toolUpdateService = ToolUpdateService();
-  final _updateTitle = ValueNotifier<String>("Check for Updates");
+  final _updateTitle = ValueNotifier<String>("检查更新");
 
   @override
   Widget build(BuildContext context) {
