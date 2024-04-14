@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.w500, fontSize: 14),
                     ),
                     const Text(
-                      "自豪地使用 Xiaoran System",
+                      "自豪地使用潇然系统",
                       style: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.normal,
@@ -286,7 +286,7 @@ class _Home extends StatelessWidget {
                   image: AssetImage('additionals/wallpaper.jpg'),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.5), // 根据需要调整不透明度
+                    Colors.black.withOpacity(0.9), // 根据需要调整不透明度
                     BlendMode.dstATop, // 这个混合模式允许渐变显示在图片上方
                   ),
                 ),
