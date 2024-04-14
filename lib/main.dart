@@ -95,7 +95,7 @@ class MyApp extends StatelessWidget {
         final appTheme = context.watch<AppTheme>();
         final appLocale = context.watch<L10nProvider>().locale;
         return FluentApp(
-          title: 'Revision Tool',
+          title: 'Revision Tool for Xiaoran System',
           debugShowCheckedModeBanner: false,
           localizationsDelegates: const [
             FluentLocalizations.delegate,
@@ -120,6 +120,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           theme: FluentThemeData(
+              fontFamily: "Microsoft Yahei UI",
               accentColor: appTheme.color,
               visualDensity: VisualDensity.standard,
               scaffoldBackgroundColor: const Color.fromRGBO(243, 243, 243, 100),

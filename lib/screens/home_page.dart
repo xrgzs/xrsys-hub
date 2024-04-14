@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> {
         ),
         appBar: NavigationAppBar(
           automaticallyImplyLeading: false,
-          title: const Text('Revision Tool'),
+          title: const Text('Revision Tool for Xiaoran System'),
           actions: WindowCaption(),
         ),
         pane: NavigationPane(
@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.w500, fontSize: 14),
                     ),
                     const Text(
-                      "Proud ReviOS user",
+                      "Proud Xiaoran System user",
                       style: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.normal,
@@ -308,7 +308,7 @@ class _Home extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 16, color: Color(0xB7FFFFFF))),
                   const Text(
-                    "Revision Tool",
+                    "Revision Tool for Xiaoran System",
                     style: TextStyle(
                       fontSize: 28,
                       color: Color(0xFFffffff),
