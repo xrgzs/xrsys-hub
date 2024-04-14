@@ -58,7 +58,7 @@
   "wuPageLabel": "隐藏 Windows 更新页面",
   "wuPageDescription": "显示此页面还将启用更新通知功能",
   "wuDriversLabel": "通过 Windows 更新安装驱动程序",
-  "wuDriversDescription": "要在 ReviOS 中安装驱动程序，您需要在设置中手动检查更新，因为 Windows 不支持自动更新",
+  "wuDriversDescription": "要在 XRSYS 中安装驱动程序，您需要在设置中手动检查更新，因为 Windows 不支持自动更新",
   "miscHibernateLabel": "休眠",
   "miscHibernateDescription": "省电 S4 状态，将当前会话保存到 休眠文件 并关闭设备。默认情况下已禁用，以避免多系统启动或系统升级时的不稳定性",
   "miscHibernateModeLabel": "休眠模式",

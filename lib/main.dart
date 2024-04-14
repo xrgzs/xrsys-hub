@@ -60,7 +60,7 @@ Future<void> main(List<String> args) async {
     RegistryUtilsService.writeDword(Registry.localMachine,
         r'SOFTWARE\Revision\Revision Tool', 'Experimental', 0);
     RegistryUtilsService.writeString(Registry.localMachine,
-        r'SOFTWARE\Revision\Revision Tool', 'Language', 'en_US');
+        r'SOFTWARE\Revision\Revision Tool', 'Language', 'zh_CN');
   }
 
   i('Initializing settings controller');
@@ -95,7 +95,7 @@ class MyApp extends StatelessWidget {
         final appTheme = context.watch<AppTheme>();
         final appLocale = context.watch<L10nProvider>().locale;
         return FluentApp(
-          title: 'Revision Tool for Xiaoran System',
+          title: '潇然系统设置工具',
           debugShowCheckedModeBanner: false,
           localizationsDelegates: const [
             FluentLocalizations.delegate,

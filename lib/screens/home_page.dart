@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> {
         ),
         appBar: NavigationAppBar(
           automaticallyImplyLeading: false,
-          title: const Text('Revision Tool for Xiaoran System'),
+          title: const Text('潇然系统设置'),
           actions: WindowCaption(),
         ),
         pane: NavigationPane(
@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.w500, fontSize: 14),
                     ),
                     const Text(
-                      "Proud Xiaoran System user",
+                      "自豪地使用 Xiaoran System",
                       style: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.normal,
@@ -308,7 +308,7 @@ class _Home extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 16, color: Color(0xB7FFFFFF))),
                   const Text(
-                    "Revision Tool for Xiaoran System",
+                    "潇然系统设置",
                     style: TextStyle(
                       fontSize: 28,
                       color: Color(0xFFffffff),

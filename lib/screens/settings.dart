@@ -185,7 +185,7 @@ class _SettingsPageState extends State<SettingsPage> {
             value: appLanguage,
             onChanged: (value) {
               setState(() {
-                appLanguage = value ?? 'en_US';
+                appLanguage = value ?? 'zh_CN';
                 RegistryUtilsService.writeString(
                     Registry.localMachine,
                     r'SOFTWARE\Revision\Revision Tool',
