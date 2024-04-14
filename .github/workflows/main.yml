@@ -42,15 +42,15 @@ jobs:
 
       - name: Calculate SHA256 hash
         run: |
-          $hash = Get-FileHash "build/RevisionTool-Setup.exe" -Algorithm SHA256
+          $hash = Get-FileHash "build/XRSYSHub-Setup.exe" -Algorithm SHA256
           echo "SHA256_HASH=$($hash.Hash)" | Out-File -FilePath $env:GITHUB_ENV -Append
         
       - name: Release
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.TOKEN }}
-          file: build/RevisionTool-Setup.exe
-          asset_name: XRSYSTool-Setup.exe
+          file: build/XRSYSHub-Setup.exe
+          asset_name: XRSYSHub-Setup.exe
           tag: ${{ github.ref }}
           overwrite: true
           body: "SHA256: `${{ env.SHA256_HASH }}`"

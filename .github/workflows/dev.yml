@@ -49,11 +49,11 @@ jobs:
 
       - name: Calculate SHA256 hash
         run: |
-          $hash = Get-FileHash "build/RevisionTool-Setup.exe" -Algorithm SHA256
+          $hash = Get-FileHash "build/XRSYSHub-Setup.exe" -Algorithm SHA256
           echo "SHA256_HASH=$($hash.Hash)" | Out-File -FilePath $env:GITHUB_ENV -Append
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.SHA256_HASH }}
-          path: build/RevisionTool-Setup.exe
+          path: build/XRSYSHub-Setup.exe
