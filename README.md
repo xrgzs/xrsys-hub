@@ -3,8 +3,8 @@
 <img  align="left" src="windows/runner/resources/revision_icon.ico" width="64" height="64" />
 
 # XRSYS-Hub
-[![Releases](https://img.shields.io/github/v/release/MeetRevision/revision-tool.svg)](https://github.com/xrgzs/xrsys-hub/releases)
-[![License](https://img.shields.io/github/license/MeetRevision/revision-tool.svg)](https://github.com/xrgzs/xrsys-hub/blob/main/LICENSE)
+[![Releases](https://img.shields.io/github/v/release/xrgzs/xrsys-hub.svg)](https://github.com/xrgzs/xrsys-hub/releases)
+[![License](https://img.shields.io/github/license/xrgzs/xrsys-hub.svg)](https://github.com/xrgzs/xrsys-hub/blob/main/LICENSE)
 [![Made with Fluent Design](https://img.shields.io/badge/fluent-design-blue?style=flat-square&color=gray&labelColor=0078D7)](https://github.com/bdlukaa/fluent_ui)
 <br>
 
