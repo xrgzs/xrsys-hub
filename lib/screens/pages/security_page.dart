@@ -266,7 +266,7 @@ class _SecurityPageState extends State<SecurityPage> {
             child: Button(
               onPressed: () async {
                 showLoadingDialog(context, "正在校准时间");
-                await _securityService.updateCertificates();
+                await _securityService.updateTime();
 
                 if (!context.mounted) return;
                 context.pop();
