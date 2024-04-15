@@ -26,6 +26,7 @@ OutputBaseFilename=XRSYSHub-Setup
 SetupIconFile={#SourcePath}\windows\runner\resources\revision_icon.ico
 Compression=lzma
 SolidCompression=yes
+UninstallDisplayName={#MyAppName}
 UninstallDisplayIcon={app}\{#MyAppExeName}
 WizardStyle=modern
 PrivilegesRequired=admin
