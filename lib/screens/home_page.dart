@@ -286,7 +286,7 @@ class _Home extends StatelessWidget {
                   image: AssetImage('additionals/wallpaper.jpg'),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.9), // 根据需要调整不透明度
+                    Colors.black.withOpacity(0.75), // 根据需要调整不透明度
                     BlendMode.dstATop, // 这个混合模式允许渐变显示在图片上方
                   ),
                 ),
