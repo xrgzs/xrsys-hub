@@ -19,7 +19,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-          cache: false
+          cache: true
 
       # https://github.com/subosito/flutter-action/issues/278
       - name: Export pub environment variable
