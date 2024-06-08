@@ -14,12 +14,13 @@ class RegistryUtilsService {
   static bool get isW11 => _w11;
   static final bool _w11 = buildNumber > 19045;
 
+  static final String cpuArch = RegistryUtilsService.readString(
+          RegistryHive.localMachine,
+          r'SYSTEM\CurrentControlSet\Control\Session Manager\Environment',
+          'PROCESSOR_ARCHITECTURE')!
+      .toLowerCase();
+
   static bool get isSupported => true;
-      // readString(
-      //     RegistryHive.localMachine,
-      //     r'SOFTWARE\Microsoft\Windows NT\CurrentVersion',
-      //     'EditionSubVersion') ==
-      // 'ReviOS';
 
   // As of 04.03.2024, ReviOS playbook doesn't support removing packages for ARM devices, therefore reverting to the old method.
   // static bool _validate() {
@@ -159,7 +160,7 @@ class RegistryUtilsService {
     try {
       regKey.deleteKey(regPath);
       v('Deleted $path');
-    } catch (_) {
+    } catch (e) {
       w('Error deleting $path');
     }
   }
