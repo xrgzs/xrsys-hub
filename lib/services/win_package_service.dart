@@ -47,8 +47,12 @@ class WinPackageService {
     final int currentState = RegistryUtilsService.readInt(
         RegistryHive.localMachine, cbsPackagesRegPath + key, 'CurrentState')!;
 
+    final int? lastError = RegistryUtilsService.readInt(
+        RegistryHive.localMachine, cbsPackagesRegPath + key, 'LastError');
+
     // installation codes - https://forums.ivanti.com/s/article/Understand-Patch-installation-failure-codes?language=en_US
-    return currentState != 5 || currentState != 4294967264;
+    return (currentState != 5 || currentState != 4294967264) &&
+        lastError == null;
   }
 
   Future<void> downloadPackage(final WinPackageType packageType) async {
@@ -75,6 +79,15 @@ class WinPackageService {
   }
 
   Future<void> installPackage(final WinPackageType packageType) async {
+    if (packageType == WinPackageType.systemComponentsRemoval) {
+      // remove 'OneDrive' from explorer TODO: Remove this section after a new PB is released
+      RegistryUtilsService.writeDword(
+          Registry.classesRoot,
+          r'CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}',
+          'System.IsPinnedToNameSpaceTree',
+          0);
+    }
+
     if (!await File("$directoryExe\\cab-installer.ps1").exists()) {
       throw 'cab-installer.ps1 not found in $directoryExe. Please ensure the file is present by reinstalling Revision Tool.';
     }
@@ -86,6 +99,6 @@ class WinPackageService {
 
   Future<void> uninstallPackage(final WinPackageType packageType) async {
     await _shell.run(
-        'PowerShell -NonInteractive -NoLogo -NoP -C "Get-WindowsPackage -Online -PackageName \'${packageType.packageName}*\' | Remove-WindowsPackage -Online -NoRestart"');
+        'PowerShell -EP Unrestricted -NonInteractive -NoLogo -NoP -C "Get-WindowsPackage -Online -PackageName \'${packageType.packageName}*\' | Remove-WindowsPackage -Online -NoRestart"');
   }
 }
