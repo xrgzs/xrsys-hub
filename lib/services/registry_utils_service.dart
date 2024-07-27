@@ -1,6 +1,7 @@
+import 'dart:typed_data';
+
 import 'package:mixin_logger/mixin_logger.dart';
 import 'package:win32_registry/win32_registry.dart';
-import 'dart:typed_data';
 
 class RegistryUtilsService {
   const RegistryUtilsService._private();
@@ -21,22 +22,6 @@ class RegistryUtilsService {
       .toLowerCase();
 
   static bool get isSupported => true;
-
-  // As of 04.03.2024, ReviOS playbook doesn't support removing packages for ARM devices, therefore reverting to the old method.
-  // static bool _validate() {
-  //   final key = Registry.openPath(RegistryHive.localMachine,
-  //       path:
-  //           r'SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages');
-
-  //   try {
-  //     return key.subkeyNames
-  //         .lastWhere((element) => element.startsWith("Revision-ReviOS"))
-  //         .isNotEmpty;
-  //   } catch (e) {
-  //     w('Error validating ReviOS');
-  //     return false;
-  //   }
-  // }
 
   static String? get themeModeReg => RegistryUtilsService.readString(
       RegistryHive.localMachine,
