@@ -1,12 +1,18 @@
 on:
   workflow_dispatch:
   push:
-    tags:
-      - '*'
-name: "Build & Release"
+    paths-ignore:
+      - '.github/*'
+      - '*.md'
+  pull_request:
+    paths-ignore:
+      - '.github/*'
+      - '*.md'
+
+name: "Build Dev"
 jobs:
   build:
-    name: Build & Release
+    name: Build Dev
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -59,12 +65,8 @@ jobs:
           $hash = Get-FileHash "XRSYSHub-Setup.exe" -Algorithm SHA256
           echo "SHA256_HASH=$($hash.Hash)" | Out-File -FilePath $env:GITHUB_ENV -Append
         
-      - name: Release
-        uses: svenstaro/upload-release-action@v2
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
         with:
-          repo_token: ${{ secrets.TOKEN }}
-          file: XRSYSHub-Setup.exe
-          asset_name: XRSYSHub-Setup.exe
-          tag: ${{ github.ref }}
-          overwrite: true
-          body: "SHA256: `${{ env.SHA256_HASH }}`"
+          name: ${{ env.SHA256_HASH }}
+          path: XRSYSHub-Setup.exe

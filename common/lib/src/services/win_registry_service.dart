@@ -21,34 +21,7 @@ class WinRegistryService {
           'PROCESSOR_ARCHITECTURE')!
       .toLowerCase();
 
-  static bool get isSupported {
-    return _validate() ||
-        readString(
-                RegistryHive.localMachine,
-                r'SOFTWARE\Microsoft\Windows NT\CurrentVersion',
-                'EditionSubVersion') ==
-            'ReviOS' ||
-        readString(
-                RegistryHive.localMachine,
-                r'SOFTWARE\Microsoft\Windows NT\CurrentVersion',
-                'EditionSubManufacturer') ==
-            'MeetRevision';
-  }
-
-  static bool _validate() {
-    final key = Registry.openPath(RegistryHive.localMachine,
-        path:
-            r'SOFTWARE\Microsoft\Windows\CurrentVersion\Component Based Servicing\Packages');
-
-    try {
-      return key.subkeyNames
-          .lastWhere((element) => element.startsWith("Revision-ReviOS"))
-          .isNotEmpty;
-    } catch (e) {
-      logger.w('Error validating ReviOS');
-      return false;
-    }
-  }
+  static bool get isSupported => true;
 
   static String? get themeModeReg => WinRegistryService.readString(
       RegistryHive.localMachine,

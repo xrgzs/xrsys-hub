@@ -77,7 +77,7 @@ class _MSStorePageState extends State<MSStorePage>
           labelStyle: context.theme.typography.title,
           label: context.l10n.pageMSStore,
           child: Text(
-            context.l10n.experimental,
+            "如果安装失败，可能是依赖安装顺序有问题，请尝试重新下载安装，直到安装成功",
             style: context.theme.typography.body,
           ),
         ),

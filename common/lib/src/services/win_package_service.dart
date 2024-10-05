@@ -81,7 +81,7 @@ class WinPackageService {
 
   Future<void> installPackage(final WinPackageType packageType) async {
     if (!await File("$directoryExe\\cab-installer.ps1").exists()) {
-      throw 'cab-installer.ps1 not found in $directoryExe. Please ensure the file is present by reinstalling Revision Tool.';
+      throw 'cab-installer.ps1 not found in $directoryExe. Please ensure the file is present by reinstalling Xiaoran System Hub.';
     }
 
     // running it via TrustedInstaller causes 'Win32 internal error "Access is denied" 0x5 occurred while reading the console output buffer'

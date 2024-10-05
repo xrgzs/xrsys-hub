@@ -19,7 +19,7 @@ import 'package:window_plus/window_plus.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  logger.i('Revision Tool GUI is starting');
+  logger.i('Xiaoran System Hub GUI is starting');
 
   if (WinRegistryService.isSupported) {
     logger.i('isSupported is true');
@@ -35,7 +35,7 @@ Future<void> main() async {
     WinRegistryService.writeDword(Registry.localMachine,
         r'SOFTWARE\Revision\Revision Tool', 'Experimental', 0);
     WinRegistryService.writeString(Registry.localMachine,
-        r'SOFTWARE\Revision\Revision Tool', 'Language', 'en_US');
+        r'SOFTWARE\Revision\Revision Tool', 'Language', 'zh_CN');
   }
 
   logger.i('Initializing settings controller');
@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
         final appTheme = context.watch<AppTheme>();
         final appLocale = context.watch<L10nProvider>().locale;
         return FluentApp(
-          title: 'Revision Tool',
+          title: '潇然系统设置工具',
           debugShowCheckedModeBanner: false,
           localizationsDelegates: const [
             FluentLocalizations.delegate,
@@ -84,6 +84,7 @@ class MyApp extends StatelessWidget {
           themeMode: appTheme.themeMode,
           color: appTheme.color,
           darkTheme: FluentThemeData(
+            fontFamily: "Microsoft Yahei UI",
             brightness: Brightness.dark,
             accentColor: appTheme.color,
             navigationPaneTheme: NavigationPaneThemeData(
@@ -106,6 +107,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           theme: FluentThemeData(
+            fontFamily: "Microsoft Yahei UI",
             accentColor: appTheme.color,
             visualDensity: VisualDensity.standard,
             navigationPaneTheme: NavigationPaneThemeData(
