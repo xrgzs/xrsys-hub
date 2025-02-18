@@ -1,1 +1,1 @@
-start /b /min /wait "" "%programfiles(x86)%\Revision Tool\revitool.exe" defender enable
+start /b /min /wait "" "%programfiles(x86)%\Xiaoran\Hub\revitool.exe" defender enable

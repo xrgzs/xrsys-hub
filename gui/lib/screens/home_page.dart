@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
         ),
         appBar: NavigationAppBar(
           automaticallyImplyLeading: false,
-          title: const Text('Revision Tool'),
+          title: const Text('潇然系统设置'),
           actions: WindowCaption(),
         ),
         pane: NavigationPane(
@@ -159,7 +159,7 @@ class _HomePageState extends State<HomePage> {
                           fontWeight: FontWeight.w500, fontSize: 14),
                     ),
                     const Text(
-                      "Proud ReviOS user",
+                      "自豪地使用潇然系统",
                       style: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.normal,
@@ -235,25 +235,25 @@ class _Home extends StatelessWidget {
 
   static final _homeCardButtons = [
     CardButtonWidget(
+      icon: msicons.FluentIcons.document_multiple_20_regular,
+      title: "文档",
+      subtitle: "阅读详细说明",
+      onPressed: () async => await run(
+          "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top/"),
+    ),
+    CardButtonWidget(
+      icon: msicons.FluentIcons.contact_card_20_regular,
+      title: "联系",
+      subtitle: "与我们保持联系",
+      onPressed: () async => await run(
+          "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top/overview/contact.html"),
+    ),
+    CardButtonWidget(
       icon: FluentIcons.git_graph,
       title: "GitHub",
-      subtitle: "Source Code",
+      subtitle: "查看源代码",
       onPressed: () async => await run(
-          "rundll32 url.dll,FileProtocolHandler https://github.com/meetrevision"),
-    ),
-    CardButtonWidget(
-      icon: msicons.FluentIcons.drink_coffee_20_regular,
-      title: "Donation",
-      subtitle: "Support the project",
-      onPressed: () async => await run(
-          "rundll32 url.dll,FileProtocolHandler https://revi.cc/donate"),
-    ),
-    CardButtonWidget(
-      icon: msicons.FluentIcons.chat_help_20_regular,
-      title: "Discord",
-      subtitle: "Join our server",
-      onPressed: () async => await run(
-          "rundll32 url.dll,FileProtocolHandler https://discord.gg/962y4pU"),
+          "rundll32 url.dll,FileProtocolHandler https://github.com/xrgzs"),
     ),
   ];
 
@@ -271,6 +271,14 @@ class _Home extends StatelessWidget {
                   maxHeight: MediaQuery.sizeOf(context).height * 0.72),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  image: AssetImage('additionals/wallpaper.jpg'),
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                    Colors.black.withOpacity(0.75), // 根据需要调整不透明度
+                    BlendMode.dstATop, // 这个混合模式允许渐变显示在图片上方
+                  ),
+                ),
                 gradient: context.theme.brightness.isDark
                     ? const LinearGradient(
                         colors: [
@@ -293,11 +301,11 @@ class _Home extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(context.l10n.homeWelcome,
+                  Text("欢迎使用",
                       style: const TextStyle(
                           fontSize: 16, color: Color(0xB7FFFFFF))),
                   const Text(
-                    "Revision Tool",
+                    "潇然系统",
                     style: TextStyle(
                       fontSize: 28,
                       color: Color(0xFFffffff),
@@ -305,7 +313,7 @@ class _Home extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(bottom: 8.0),
-                    child: Text(context.l10n.homeDescription,
+                    child: Text("帮助您更方便地使用和维护电脑",
                         style: const TextStyle(
                             fontSize: 16, color: Color(0xB7FFFFFF))
                         //     : const TextStyle(
@@ -318,9 +326,9 @@ class _Home extends StatelessWidget {
                     child: SizedBox(
                       width: 175,
                       child: Button(
-                        child: Text(context.l10n.homeReviLink),
+                        child: Text('访问官网'),
                         onPressed: () async => await run(
-                            "rundll32 url.dll,FileProtocolHandler https://www.revi.cc"),
+                            "rundll32 url.dll,FileProtocolHandler https://www.xrgzs.top"),
                       ),
                     ),
                   ),
@@ -329,9 +337,9 @@ class _Home extends StatelessWidget {
                     child: SizedBox(
                       width: 175,
                       child: FilledButton(
-                        child: Text(context.l10n.homeReviFAQLink),
+                        child: Text('阅读文档'),
                         onPressed: () async => await run(
-                            "rundll32 url.dll,FileProtocolHandler https://www.revi.cc/docs/category/faq"),
+                            "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top/"),
                       ),
                     ),
                   ),

@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "MeetRevision" "\0"
-            VALUE "FileDescription", "Revision Tool GUI version" "\0"
+            VALUE "CompanyName", "Xiaoran Studio" "\0"
+            VALUE "FileDescription", "Xiaoran System Hub GUI version" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "Revision Tool" "\0"
-            VALUE "LegalCopyright", "Copyright (C) MeetRevision. All rights reserved." "\0"
+            VALUE "InternalName", "Xiaoran System Hub" "\0"
+            VALUE "LegalCopyright", "Copyright (C) Xiaoran Studio. All rights reserved." "\0"
             VALUE "OriginalFilename", "revitoolw.exe" "\0"
-            VALUE "ProductName", "Revision Tool" "\0"
+            VALUE "ProductName", "Xiaoran System Hub" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

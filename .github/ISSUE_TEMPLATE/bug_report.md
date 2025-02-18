@@ -25,8 +25,8 @@ If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
  - OS: [e.g. Windows 11 Home 22631.3155]
- - Playbook Version: [e.g. ReviOS 23.12]
- - Revision Tool Version: [e.g. 1.8.0]
+ - Playbook Version: [e.g. XRSYS-OSC 23.12]
+ - Xiaoran System Hub Version: [e.g. 1.8.0]
 
 **Additional context**
 Add any other context about the problem here.

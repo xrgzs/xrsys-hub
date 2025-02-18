@@ -18,7 +18,7 @@ class ToolUpdateService {
   );
 
   static const _githubAPI =
-      "https://api.github.com/repos/meetrevision/revision-tool/releases/latest";
+      "https://api.github.com/repos/xrgzs/xrsys-hub/releases/latest";
 
   static final _tempDir = Directory.systemTemp;
 
@@ -60,7 +60,7 @@ class ToolUpdateService {
       data["assets"][0]["browser_download_url"],
       path,
     );
-    logger.i("New Revision Tool download status: ${download.statusMessage}");
+    logger.i("New Xiaoran System Hub download status: ${download.statusMessage}");
   }
 
   Future<void> installUpdate() async {
