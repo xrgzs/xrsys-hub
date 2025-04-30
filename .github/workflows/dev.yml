@@ -1,12 +1,18 @@
 on:
   workflow_dispatch:
   push:
-    tags:
-      - '*'
-name: "Build & Release"
+    paths-ignore:
+      - '.github/*'
+      - '*.md'
+  pull_request:
+    paths-ignore:
+      - '.github/*'
+      - '*.md'
+
+name: "Build Dev"
 jobs:
   build:
-    name: Build & Release
+    name: Build Dev
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,19 +36,15 @@ jobs:
           (Get-Content -Path "inno-setup.iss" -Encoding utf8BOM) -replace '#define MyAppVersion "[\d\.]+"', "#define MyAppVersion `"${{ env.NEW_VERSION }}`"" | Set-Content -Path "inno-setup.iss" -Encoding utf8BOM
         shell: pwsh
       
-      - name: Compile C code
-        run: gcc -shared -o process_checker.dll process_checker.c -lpsapi -O3
-        working-directory: native_utils
-
       - run: flutter gen-l10n
         working-directory: gui
 
       - run: dart run build_runner build --delete-conflicting-outputs
         working-directory: common
-
+        
       - run: dart run build_runner build --delete-conflicting-outputs
         working-directory: gui
-
+        
       - name: Build revitool CLI
         run: dart compile exe common/bin/main.dart -o revitool.exe --define=APP_VERSION=${{ env.NEW_VERSION }} 
 
@@ -66,12 +68,8 @@ jobs:
           $hash = Get-FileHash "XRSYSHub-Setup.exe" -Algorithm SHA256
           echo "SHA256_HASH=$($hash.Hash)" | Out-File -FilePath $env:GITHUB_ENV -Append
         
-      - name: Release
-        uses: svenstaro/upload-release-action@v2
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
         with:
-          repo_token: ${{ secrets.TOKEN }}
-          file: XRSYSHub-Setup.exe
-          asset_name: XRSYSHub-Setup.exe
-          tag: ${{ github.ref }}
-          overwrite: true
-          body: "SHA256: `${{ env.SHA256_HASH }}`"
+          name: ${{ env.SHA256_HASH }}
+          path: XRSYSHub-Setup.exe

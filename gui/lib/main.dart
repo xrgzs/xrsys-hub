@@ -17,7 +17,7 @@ import 'package:window_plus/window_plus.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  logger.i('Revision Tool GUI is starting');
+  logger.i('Xiaoran System Hub GUI is starting');
 
   if (WinRegistryService.isSupported) {
     logger.i('isSupported is true');
@@ -47,7 +47,7 @@ Future<void> main() async {
       Registry.localMachine,
       r'SOFTWARE\Revision\Revision Tool',
       'Language',
-      'en_US',
+      'zh_CN',
     );
   }
 
@@ -79,7 +79,7 @@ class MyApp extends ConsumerWidget {
     return SystemThemeBuilder(
       builder:
           (context, accent) => FluentApp(
-            title: 'Revision Tool',
+            title: '潇然系统设置工具',
             debugShowCheckedModeBanner: false,
             localizationsDelegates: const [
               FluentLocalizations.delegate,
@@ -91,6 +91,7 @@ class MyApp extends ConsumerWidget {
             themeMode: appSettings.themeMode,
             color: getSystemAccentColor(accent),
             darkTheme: FluentThemeData(
+              fontFamily: "Microsoft Yahei UI",
               brightness: Brightness.dark,
               accentColor: getSystemAccentColor(accent),
 
@@ -129,6 +130,7 @@ class MyApp extends ConsumerWidget {
               ),
             ),
             theme: FluentThemeData(
+              fontFamily: "Microsoft Yahei UI",
               accentColor: getSystemAccentColor(accent),
               visualDensity: VisualDensity.standard,
               navigationPaneTheme: NavigationPaneThemeData(
