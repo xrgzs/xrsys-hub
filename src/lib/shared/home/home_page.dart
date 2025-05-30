@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
         ),
         appBar: NavigationAppBar(
           automaticallyImplyLeading: false,
-          title: const Text('Revision Tool'),
+          title: const Text('潇然系统设置'),
           actions: WindowCaption(),
         ),
         pane: NavigationPane(
@@ -145,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     const Text(
-                      "Proud ReviOS user",
+                      "自豪地使用潇然系统",
                       style: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.normal,
@@ -224,30 +224,30 @@ class _HomePageState extends State<HomePage> {
 
 final _homeCardButtons = [
   CardButtonWidget(
-    icon: FluentIcons.git_graph,
-    title: "GitHub",
-    subtitle: "Source Code",
+    icon: msicons.FluentIcons.document_multiple_20_regular,
+    title: "文档",
+    subtitle: "阅读详细说明",
     onPressed:
         () async => await run(
-          "rundll32 url.dll,FileProtocolHandler https://github.com/meetrevision",
+          "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top/",
         ),
   ),
   CardButtonWidget(
-    icon: msicons.FluentIcons.drink_coffee_20_regular,
-    title: "Donation",
-    subtitle: "Support the project",
+    icon: msicons.FluentIcons.contact_card_20_regular,
+    title: "联系",
+    subtitle: "与我们保持联系",
     onPressed:
         () async => await run(
-          "rundll32 url.dll,FileProtocolHandler https://revi.cc/donate",
+          "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top/overview/contact.html",
         ),
   ),
   CardButtonWidget(
     icon: msicons.FluentIcons.chat_help_20_regular,
-    title: "Discord",
-    subtitle: "Join our server",
+    title: "GitHub",
+    subtitle: "查看源代码",
     onPressed:
         () async => await run(
-          "rundll32 url.dll,FileProtocolHandler https://discord.gg/962y4pU",
+          "rundll32 url.dll,FileProtocolHandler https://github.com/xrgzs",
         ),
   ),
 ];
@@ -303,6 +303,14 @@ class _HomePageContent extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
+        image: DecorationImage(
+          image: AssetImage('additionals/wallpaper.jpg'),
+          fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(
+            Colors.black.withOpacity(0.75), // 根据需要调整不透明度
+            BlendMode.dstATop, // 这个混合模式允许渐变显示在图片上方
+          ),
+        ),
         gradient:
             context.theme.brightness.isDark
                 ? const LinearGradient(
@@ -333,7 +341,7 @@ class _HomePageContent extends StatelessWidget {
               style: const TextStyle(fontSize: 16, color: Color(0xB7FFFFFF)),
             ),
             const Text(
-              "Revision Tool",
+              "潇然系统设置",
               style: TextStyle(fontSize: 28, color: Color(0xFFffffff)),
             ),
             Padding(
@@ -351,7 +359,7 @@ class _HomePageContent extends StatelessWidget {
                   child: Text(context.l10n.homeReviLink),
                   onPressed:
                       () async => await run(
-                        "rundll32 url.dll,FileProtocolHandler https://www.revi.cc",
+                        "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top",
                       ),
                 ),
               ),
@@ -364,7 +372,7 @@ class _HomePageContent extends StatelessWidget {
                   child: Text(context.l10n.homeReviFAQLink),
                   onPressed:
                       () async => await run(
-                        "rundll32 url.dll,FileProtocolHandler https://www.revi.cc/docs/category/faq",
+                        "rundll32 url.dll,FileProtocolHandler https://sys.xrgzs.top/faq",
                       ),
                 ),
               ),

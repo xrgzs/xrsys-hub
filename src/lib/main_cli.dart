@@ -10,7 +10,7 @@ import 'package:revitool/shared/win_registry_service.dart';
 import 'package:revitool/utils.dart';
 
 Future<void> main(List<String> args) async {
-  if (!WinRegistryService.isSupported && !Directory(ameTemp).existsSync()) {
+  if (!WinRegistryService.isSupported) {
     logger.i('Unsupported build detected. Please apply ReviOS on your system');
     exit(55);
   }
@@ -25,12 +25,12 @@ Future<void> main(List<String> args) async {
     exit(1);
   }
 
-  logger.i('Revision Tool CLI is starting');
+  logger.i('Xiaoran System Hub CLI is starting');
 
   final runner =
       CommandRunner<String>(
           "revitool",
-          "Revision Tool CLI v${const String.fromEnvironment('APP_VERSION', defaultValue: '1.0.0')}",
+          "Xiaoran System Hub CLI v${const String.fromEnvironment('APP_VERSION', defaultValue: '1.0.0')}",
         )
         ..addCommand(MSStoreCommand())
         ..addCommand(SecurityCommand())
