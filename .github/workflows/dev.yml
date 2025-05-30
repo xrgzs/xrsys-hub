@@ -1,18 +1,24 @@
 on:
   workflow_dispatch:
   push:
-    tags:
-      - '*'
-name: "Build & Release"
+    paths-ignore:
+      - ".github/*"
+      - "*.md"
+  pull_request:
+    paths-ignore:
+      - ".github/*"
+      - "*.md"
+
+name: "Build Dev"
 jobs:
   build:
-    name: Build & Release
+    name: Build Dev
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          channel: "stable"
           cache: true
 
       # https://github.com/subosito/flutter-action/issues/278
@@ -22,14 +28,14 @@ jobs:
       #       echo "PUB_CACHE=$LOCALAPPDATA\\Pub\\Cache" >> $GITHUB_ENV
       #     fi
       #   shell: bash
-    
+
       - run: echo "NEW_VERSION=${{ github.ref_name }}" | Out-File -FilePath $env:GITHUB_ENV -Append
 
       - name: Bump MyAppVersion in Inno Setup
         run: |
           (Get-Content -Path "inno-setup.iss" -Encoding utf8BOM) -replace '#define MyAppVersion "[\d\.]+"', "#define MyAppVersion `"${{ env.NEW_VERSION }}`"" | Set-Content -Path "inno-setup.iss" -Encoding utf8BOM
         shell: pwsh
-      
+
       - name: Compile C code
         run: gcc -shared -o process_checker.dll process_checker.c -lpsapi -O3
         working-directory: native_utils
@@ -41,7 +47,7 @@ jobs:
         working-directory: src
 
       - name: Build revitool CLI
-        run: dart compile exe src/lib/main_cli.dart -o revitool.exe --define=APP_VERSION=${{ env.NEW_VERSION }} 
+        run: dart compile exe src/lib/main_cli.dart -o revitool.exe --define=APP_VERSION=${{ env.NEW_VERSION }}
 
       - name: Enable Administrator Privileges for revitool CLI app
         shell: pwsh
@@ -51,7 +57,7 @@ jobs:
       - name: Build revitool GUI
         run: flutter build windows --build-name=${{ env.NEW_VERSION }} --build-number=1 --obfuscate --split-debug-info=/symbols --dart-define=APP_VERSION=${{ env.NEW_VERSION }}
         working-directory: src
-      
+
       - name: Build Installer
         run: |
           curl.exe -sSL "https://github.com/kira-96/Inno-Setup-Chinese-Simplified-Translation/raw/main/ChineseSimplified.isl" -o "%programfiles(x86)%\Inno Setup 6\Languages\ChineseSimplified.isl"
@@ -64,13 +70,9 @@ jobs:
         run: |
           $hash = Get-FileHash "XRSYSHub-Setup.exe" -Algorithm SHA256
           echo "SHA256_HASH=$($hash.Hash)" | Out-File -FilePath $env:GITHUB_ENV -Append
-        
-      - name: Release
-        uses: svenstaro/upload-release-action@v2
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
         with:
-          repo_token: ${{ secrets.TOKEN }}
-          file: XRSYSHub-Setup.exe
-          asset_name: XRSYSHub-Setup.exe
-          tag: ${{ github.ref }}
-          overwrite: true
-          body: "SHA256: `${{ env.SHA256_HASH }}`"
+          name: ${{ env.SHA256_HASH }}
+          path: XRSYSHub-Setup.exe

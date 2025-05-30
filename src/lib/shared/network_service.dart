@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 
 enum ApiEndpoints {
-  revisionTool(api: 'meetrevision/revision-tool'),
+  revisionTool(api: 'xrgzs/xrsys-hub'),
   cabPackages(api: 'meetrevision/packages');
 
   const ApiEndpoints({
